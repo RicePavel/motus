@@ -10,14 +10,25 @@ Ext.define('motus.view.login.LoginController', {
     
     onLoginClick: function() {
         
-        localStorage.setItem('MotusLogged', true);
+        /*
+        Ext.Ajax.request({
+            url: '../motus_back/web/user/login',
+            method: 'POST',
+            params: {
+                login: 'user',
+                password: 'qwerty'
+            },
+            success: function(response, opts) {
+                var obj = Ext.decode(response.responseText);
+                console.log(obj);
+            },
+            failure: function(response, opts) {
+              var obj = Ext.decode(response.responseText);
+              console.error(obj);
+            }
+        });
+        */
         
-        this.getView().destroy();
-        
-        Ext.create({
-            xtype: 'task_list',
-            renderTo: Ext.getBody()
-        }); 
     }
 });
 
